@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="notepad3.FXMLNotepadController">
+    <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar stylesheets="@button.css" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                      <!--4 Buchstaben-->                                                                 
+                        <MenuItem mnemonicParsing="false" onAction="#NewAction" text="New                   Ctrl+N" />
+                    <MenuItem mnemonicParsing="false" onAction="#OpenAction" text="Open                  Ctrl+Open" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#SaveAction" text="Save                  Ctrl+S" />
+                        <MenuItem mnemonicParsing="false" onAction="#SaveAsAction" text="Save As               Ctrl+S" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#CloseAction" text="Close                 Ctrl+E" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#UndoAction" text="undo" />
+                        <MenuItem mnemonicParsing="false" onAction="#RedoAction" text="redo" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TextArea fx:id="ta" onKeyPressed="#taOnKeyPressed" prefHeight="200.0" prefWidth="200.0" styleClass="ta" stylesheets="@button.css" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+            <AnchorPane fx:id="Sidebar" prefHeight="200.0" prefWidth="200.0" styleClass="sidebar" stylesheets="@button.css" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="SidebarNav" fitHeight="80.0" fitWidth="100.0" layoutX="100.0" onMousePressed="#MenuNavPressed" onMouseReleased="#MenuNavReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@threelines.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="SidebarNavClose" fitHeight="80.0" fitWidth="100.0" layoutX="100.0" onMousePressed="#MenuNavClosePressed" onMouseReleased="#MenuNavCloseReleased" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@threelines.png" />
+                     </image>
+                  </ImageView>
+                  <VBox fx:id="vbox" layoutX="12.0" layoutY="69.0" prefHeight="294.0" prefWidth="174.0" spacing="30.0">
+                     <children>
+                        <TextField promptText="search" styleClass="search" stylesheets="@button.css" />
+                        <Button fx:id="createButton" mnemonicParsing="false" onAction="#CreateAction" onMouseClicked="#beispiel" prefHeight="32.0" prefWidth="174.0" styleClass="createButton" stylesheets="@button.css" text="Create" />
+                        <Label fx:id="notebooklbl" text="Notebooks" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+    </children>
+</AnchorPane>
