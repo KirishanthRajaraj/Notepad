@@ -9,6 +9,6 @@ Notepad is a simple Text Editor made with JavaFX.
 
 
 ## Showcase
-![NotepadUI](https://github.com/KirishanthRajaraj/Files.git/master/UI.png?raw=true)
+![NotepadUI](https://github.com/KirishanthRajaraj/Notepad.git/blob/master/UI.png"UI")
 
 
