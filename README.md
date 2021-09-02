@@ -6,7 +6,7 @@ Notepad is a simple Text Editor made with JavaFX.
 * Open existing textfiles
 
 * Create inapplication tabs (in developement)
-* undo (CTRL Z), redo (CTRL Y) your text(in developement)
+* undo (CTRL Z), redo (CTRL Y) your text (in developement)
 
 
 ## Showcase
